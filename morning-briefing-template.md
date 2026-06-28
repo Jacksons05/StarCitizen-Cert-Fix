@@ -104,3 +104,60 @@ to an AI assistant.
   documents the template, it does not contain live data.
 - Adjust the emoji headers or section order to taste — the AI follows whatever
   structure you specify in the prompt.
+
+---
+
+## Free, no-fuss setup (iPhone)
+
+This setup uses only free, built-in tools — **no paid apps and no API keys**.
+You'll build one Shortcut, then have it run itself every morning and deliver
+the briefing as a notification.
+
+### What you need (all free)
+- **Shortcuts** app (built into iOS) — gathers your data.
+- A **free AI app** with a Shortcuts action — the **ChatGPT** app's
+  *"Ask ChatGPT"* action or the **Claude** app's equivalent. Just install and
+  sign in; the free tier is plenty for a daily briefing.
+
+### Step 1 — Build the Shortcut
+Open **Shortcuts → +** (new shortcut) and add these actions in order:
+
+1. **Get Current Weather** → then **Get Details of Weather Conditions** (pull
+   the bits you want: conditions, high, low, chance of rain).
+2. **Find Calendar Events** → set *Start Date is Today*. (Sort by start time.)
+3. **Find Reminders** → set *Is Completed is No*. (Optionally filter by due
+   date / list.)
+4. **Find Email** *(Mail app)* → *Unread is Yes*, limit to ~10.
+5. **Text** action — paste the **Prompt** from above, then drag each variable
+   from steps 1–4 into the matching `[Insert Shortcut Input / ...]` slot at the
+   bottom.
+6. **Ask ChatGPT** (or **Claude**) — set its input to the **Text** from step 5.
+7. **Show Notification** (or **Show Result** / **Speak Text**) — set its input
+   to the AI's response.
+
+Tip: name the shortcut something like **"Morning Briefing"** and give it a sunny
+icon.
+
+### Step 2 — Make it run automatically every morning
+1. In Shortcuts, tap the **Automation** tab → **+** → **Create Personal
+   Automation**.
+2. Choose **Time of Day** → set e.g. **7:00 AM**, **Daily**.
+3. **Run Immediately** → turn **OFF** *"Ask Before Running"* so it's hands-free.
+4. Add action **Run Shortcut → Morning Briefing**.
+
+That's it — each morning the briefing arrives on its own as a notification.
+
+### Optional — put it on your home screen
+- **Tap-to-run icon:** open the shortcut → share/settings → **Add to Home
+  Screen**. Tapping it runs the briefing on demand.
+- **Shortcuts widget:** long-press the home screen → **+** → **Shortcuts** →
+  pick *Morning Briefing*. (Note: the widget *launches* the shortcut; the
+  briefing text shows in the result sheet/notification, not on the widget face.)
+
+### Notes & gotchas
+- First run will ask permission for Calendar, Reminders, Mail, and the AI app —
+  allow each once.
+- If you don't use Apple Mail, swap step 4 for whatever your mail app exposes to
+  Shortcuts, or drop the Inbox section.
+- Everything here stays on free tiers; no subscription or developer account
+  required.
