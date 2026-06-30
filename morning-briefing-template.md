@@ -115,9 +115,14 @@ the briefing as a notification.
 
 ### What you need (all free)
 - **Shortcuts** app (built into iOS) — gathers your data.
-- A **free AI app** with a Shortcuts action — the **ChatGPT** app's
-  *"Ask ChatGPT"* action or the **Claude** app's equivalent. Just install and
-  sign in; the free tier is plenty for a daily briefing.
+- An AI step. Two free options, in order of preference:
+  - **Best (fully native): the built-in "Use Model" action.** If your iPhone
+    supports **Apple Intelligence** (iPhone 15 Pro / 16 and later, iOS 18.2+),
+    Shortcuts can run the AI itself — no extra app, no account, no API key.
+  - **Fallback (older iPhones):** a **free AI app** with a Shortcuts action —
+    the **ChatGPT** app's *"Ask ChatGPT"* action or the **Claude** app's
+    equivalent. Install, sign in, done; the free tier is plenty for a daily
+    briefing.
 
 ### Step 1 — Build the Shortcut
 Open **Shortcuts → +** (new shortcut) and add these actions in order:
@@ -131,9 +136,13 @@ Open **Shortcuts → +** (new shortcut) and add these actions in order:
 5. **Text** action — paste the **Prompt** from above, then drag each variable
    from steps 1–4 into the matching `[Insert Shortcut Input / ...]` slot at the
    bottom.
-6. **Ask ChatGPT** (or **Claude**) — set its input to the **Text** from step 5.
+6. **Use Model** *(Apple Intelligence — native, no app needed)* — set its input
+   to the **Text** from step 5. Leave the model on the default; you can set
+   *"Follow Up"* off and *"On-Device / Private Cloud / ChatGPT"* to Automatic.
+   *(No Apple Intelligence? Use the **Ask ChatGPT** or **Claude** action from
+   the free app instead, with the same Text as input.)*
 7. **Show Notification** (or **Show Result** / **Speak Text**) — set its input
-   to the AI's response.
+   to the AI's response (the **Model Output** from step 6).
 
 Tip: name the shortcut something like **"Morning Briefing"** and give it a sunny
 icon.
@@ -155,8 +164,9 @@ That's it — each morning the briefing arrives on its own as a notification.
   briefing text shows in the result sheet/notification, not on the widget face.)
 
 ### Notes & gotchas
-- First run will ask permission for Calendar, Reminders, Mail, and the AI app —
-  allow each once.
+- First run will ask permission for Calendar, Reminders, Mail, and the AI
+  step — allow each once. (The native **Use Model** action may also prompt to
+  enable Apple Intelligence in Settings the first time.)
 - If you don't use Apple Mail, swap step 4 for whatever your mail app exposes to
   Shortcuts, or drop the Inbox section.
 - Everything here stays on free tiers; no subscription or developer account
