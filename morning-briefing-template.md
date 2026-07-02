@@ -132,7 +132,13 @@ Open **Shortcuts → +** (new shortcut) and add these actions in order:
 2. **Find Calendar Events** → set *Start Date is Today*. (Sort by start time.)
 3. **Find Reminders** → set *Is Completed is No*. (Optionally filter by due
    date / list.)
-4. **Find Email** *(Mail app)* → *Unread is Yes*, limit to ~10.
+4. **Find Email** *(Mail app)* → *Unread is Yes*, limit to ~10. **Tip:** most
+   inboxes are ~90% newsletters, so tighten this filter so the briefing surfaces
+   only real mail. Add conditions like *Mailbox is Inbox* and, if your mail app
+   supports it, exclude promotional/newsletter senders. If you use **Gmail via a
+   Shortcuts action** instead of Apple Mail, use the query
+   `is:unread in:inbox -category:promotions -category:social newer_than:1d` —
+   this drops promos and social noise and keeps it to the last day.
 5. **Text** action — paste the **Prompt** from above, then drag each variable
    from steps 1–4 into the matching `[Insert Shortcut Input / ...]` slot at the
    bottom.
@@ -169,5 +175,9 @@ That's it — each morning the briefing arrives on its own as a notification.
   enable Apple Intelligence in Settings the first time.)
 - If you don't use Apple Mail, swap step 4 for whatever your mail app exposes to
   Shortcuts, or drop the Inbox section.
+- **Google users:** if your iPhone Calendar is synced to your Google account
+  (Settings → Calendar → Accounts), the **Find Calendar Events** action reads
+  those events automatically — no extra setup. Same for Gmail if it's added as a
+  Mail account.
 - Everything here stays on free tiers; no subscription or developer account
   required.
